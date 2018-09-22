@@ -1,8 +1,5 @@
 # Browser-Text-and-Code-Editor
-A text and code editor for your browser with save feature.
-
-Lightweight Text and Code Editor all in your browser!
-
+A lightweight text and code editor all in your browser with a save feature.
 
 
 ----Steps to initalize---
