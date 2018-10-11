@@ -1,4 +1,4 @@
-# Browser-Text-and-Code-Editor
+# browser-text-and-code-Editor
 A lightweight text and code editor all in your browser with a save feature.
 
 
