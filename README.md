@@ -9,22 +9,24 @@ A lightweight text and code editor all in your browser with a save feature.
 2.) To go to this folder, type cd and drag this folder into the terminal and press enter
 
 3.) If you do not have homebrew installed, follow the steps in this link:
-    https://brew.sh/
-
-4.) Then run ' brew install yarn ' to build the static server for the app.
+    https://brew.sh/        
+        
+        -Windows: install scoop (and npm)- https://scoop.sh/
+    
+4.) Then run ' brew install yarn ' to build the static server for the app. (Windows: ' npm install yarn -g ')
 
 5.) After installation, run  ' yarn build ' , followed by ' yarn global add serve ' (no quotations).
  
-6.) The server is now ready to be launced whenever. To run this app, you will no longer need to perform steps 1-5. Run the following steps      to deploy app on a needed basis.
+6.) The server is now ready to be launced whenever. To run this app, you will no longer need to perform steps 1-5. Run the following steps to deploy app on a needed basis.
 
 
 ----Steps to Run App----
 
-7.) Open terminal and ' cd ' into this current folder (step 2 for more details).
+7.) Open terminal and ' cd ' into the subfolder "TextEditor v0.6.5" (step 2 for more details).
 
-8.) Run ' serve -s build '
+8.) Run ' serve -s build ' (' npm install serve ' if necessary).
 
-9.) A new tab will be opened with the app. 
+9.) A new tab will be opened with the app (Or paste address displayed in the terminal into your favorite browser).
 
 
 # Features
