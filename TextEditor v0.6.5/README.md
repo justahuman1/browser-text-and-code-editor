@@ -1,7 +1,8 @@
 Lightweight Text and Code Editor all in your browser!
 
 
-----Steps to initalize---
+Steps to initalize
+====
 
 1.) After unzipping the downloaded folder, open your terminal 
 
@@ -17,8 +18,8 @@ Lightweight Text and Code Editor all in your browser!
 6.) The server is now ready to be launced whenever. To run this app, you will no longer need to perform steps 1-5. Run the following steps      to deploy app on a needed basis.
 
 
-----Steps to Run App----
-
+Steps to Run App
+====
 7.) Open terminal and ' cd ' into this current folder (step 2 for more details).
 
 8.) Run ' serve -s build '
@@ -26,8 +27,8 @@ Lightweight Text and Code Editor all in your browser!
 9.) A new tab will be opened with the app. 
 
 
-#Features
-
+Features
+====
 Save your notes to local storage by choosing one of the buttons at the bottom of the notepad. The 'Save' feature allows you to save the current state of the notepad to your browser's Local Storage with the choice of naming your file. To retrieve this file, click the button 'Get' and choose a file listed.
 
 This file will be saved until you decide to delete it, using the 'Delete' button. Choose a file name from the storage to delete.
@@ -37,13 +38,13 @@ To show the button menu, click on the notepad. Click again to hide.
 The code editor button at the top allows you to switch to a code editor mode. The current editor functions only with javascript (supports syntax highlight and error messages).
 
 
-#Bugs
+Bugs
+==
+The react state cannot be saved to Local Storage effectively due to lodash. This is a priority for the next update and will be fixed via react state loading.
 
-The react state cannot be saved to Local Storage effectively. This is a priority for the next update and will be fixed via react state loading.
 
-
-#v0.7 Update:
-
+v0.7 Update:
+====
 - Optimization of React Local State
 - Fully functional Code editor with multiple language support
 - More text-editor features (highlighting, numbered lists, etc.), as well as image  maintainance and editing
