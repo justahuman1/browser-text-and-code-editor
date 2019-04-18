@@ -2,6 +2,10 @@
 A lightweight text and code editor all in your browser with a save feature.
 
 
+<img src='https://imgur.com/DdJzXNA'>
+
+
+
 ----Steps to initalize---
 
 1.) After unzipping the downloaded folder, open your terminal 
