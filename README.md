@@ -1,9 +1,9 @@
 # Browser-Text-and-Code-Editor
 A lightweight text and code editor all in your browser with a save feature.
 
+<img src='https://i.imgur.com/OsVAuN7.png'>
 
 <img src='https://i.imgur.com/DdJzXNA.png'>
-
 
 
 ----Steps to initalize---
