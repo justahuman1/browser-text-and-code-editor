@@ -2,7 +2,7 @@
 A lightweight text and code editor all in your browser with a save feature.
 
 
-<img src='https://imgur.com/DdJzXNA'>
+<img src='https://i.imgur.com/DdJzXNA.png'>
 
 
 
