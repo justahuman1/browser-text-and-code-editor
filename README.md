@@ -6,7 +6,7 @@ A lightweight text and code editor all in your browser with a save feature.
 <img src='https://i.imgur.com/DdJzXNA.png'>
 
 
-----Steps to initalize---
+## Initalization
 
 1.) After unzipping the downloaded folder, open your terminal 
 
@@ -24,7 +24,7 @@ A lightweight text and code editor all in your browser with a save feature.
 6.) The server is now ready to be launced whenever. To run this app, you will no longer need to perform steps 1-5. Run the following steps to deploy app on a needed basis.
 
 
-----Steps to Run App----
+## Run App
 
 7.) Open terminal and ' cd ' into the subfolder "TextEditor v0.6.5" (step 2 for more details).
 
