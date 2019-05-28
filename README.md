@@ -33,7 +33,7 @@ A lightweight text and code editor all in your browser with a save feature.
 9.) A new tab will be opened with the app (Or paste address displayed in the terminal into your favorite browser).
 
 
-# Features
+### Features
 
 Save your notes to local storage by choosing one of the buttons at the bottom of the notepad. The 'Save' feature allows you to save the current state of the notepad to your browser's Local Storage with the choice of naming your file. To retrieve this file, click the button 'Get' and choose a file listed.
 
@@ -44,12 +44,12 @@ To show the button menu, click on the notepad. Click again to hide.
 The code editor button at the top allows you to switch to a code editor mode. The current editor functions only with javascript (supports syntax highlight and error messages).
 
 
-# Bugs
+## Bugs
 
 The react state cannot be saved to Local Storage effectively. This is a priority for the next update and will be fixed via react state loading.
 
 
-# v0.7 Update:
+### v0.7 Update:
 
 - Optimization of React Local State
 - Fully functional Code editor with multiple language support
