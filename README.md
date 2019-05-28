@@ -32,6 +32,7 @@ A lightweight text and code editor all in your browser with a save feature.
 
 9.) A new tab will be opened with the app (Or paste address displayed in the terminal into your favorite browser).
 
+<hr />
 
 ### Features
 
