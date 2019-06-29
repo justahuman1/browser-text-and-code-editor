@@ -1,183 +1,10 @@
-// import React, { Component, Fragment } from 'react';
-// import { Editor } from 'slate-react';
-// import { Value } from 'slate';
-
-// import Icon from 'react-icons-kit';
-// import { bold } from 'react-icons-kit/feather/bold';
-// import { italic } from 'react-icons-kit/feather/italic';
-// import { code } from 'react-icons-kit/feather/code';
-// import { list } from 'react-icons-kit/feather/list';
-// import { underline } from 'react-icons-kit/feather/underline';
-
-// import { BoldMark, ItalicMark, FormatToolbar } from './index';
-
-// // Create our initial value...
-// const initialValue = Value.fromJSON({
-// 	document: {
-// 		nodes: [
-// 			{
-// 				object: 'block',
-// 				type: 'paragraph',
-// 				nodes: [
-// 					{
-// 						object: 'text',
-// 						leaves: [
-// 							{
-// 								text: '',
-// 							},
-// 						],
-// 					},
-// 				],
-// 			},
-// 		],
-// 	},
-// });
-
-// export default class TextEditor extends Component {
-// 	state = {
-// 		value: initialValue,
-// 	};
-
-// 	// On change, update the app's React state with the new editor value.
-// 	onChange = ({ value }) => {
-// 		this.setState({ value });
-// 	};
-
-// 	onKeyDown = (e, change) => {
-// 		/*
-// 			we want all our commands to start with the user pressing ctrl,
-// 			if they don't--we cancel the action.
-// 		*/
-
-// 		if (!e.ctrlKey) {
-// 			return;
-// 		}
-
-// 		e.preventDefault();
-
-// 		switch (e.key) {
-// 			case 'b': {
-// 				change.toggleMark('bold');
-// 				return true;
-// 			}
-// 			case 'i': {
-// 				change.toggleMark('italic');
-// 				return true;
-// 			}
-
-// 			case 'e': {
-// 				change.toggleMark('code');
-// 				return true;
-// 			}
-
-// 			case 'l': {
-// 				change.toggleMark('list');
-// 				return true;
-// 			}
-
-// 			case 'u': {
-// 				change.toggleMark('underline');
-// 				return true;
-// 			}
-// 			default: {
-// 				return;
-// 			}
-// 		}
-// 	};
-
-// 	renderMark = (props) => {
-// 		switch (props.mark.type) {
-// 			case 'bold':
-// 				return <BoldMark {...props} />;
-
-// 			case 'italic':
-// 				return <ItalicMark {...props} />;
-
-// 			case 'code':
-// 				return <code {...props.attributes}>{props.children}</code>;
-
-// 			case 'list':
-// 				return (
-// 					<ul {...props.attributes}>
-// 						<li>{props.children}</li>
-// 					</ul>
-// 				);
-
-// 			case 'underline':
-// 				return <u {...props.attributes}>{props.children}</u>;
-
-// 			default: {
-// 				return;
-// 			}
-// 		}
-// 	};
-// 	ref = editor => {
-//         this.editor = editor
-// 	};
-
-// 	onMarkClick = (e, type) => {
-// 		e.preventDefault();
-// 		this.editor.toggleMark(type);
-// 	};
-
-// 	render() {
-// 		return (
-// 			<Fragment>
-// 				<FormatToolbar>
-// 					<button
-// 						onPointerDown={(e) => this.onMarkClick(e, 'bold')}
-// 						// className="tooltip-icon-button"
-// 					>
-// 						<Icon icon={bold} />
-// 					</button>
-// 					<button
-// 						onPointerDown={(e) => this.onMarkClick(e, 'italic')}
-// 						className="tooltip-icon-button"
-// 					>
-// 						<Icon icon={italic} />
-// 					</button>
-// 					<button
-// 						onPointerDown={(e) => this.onMarkClick(e, 'code')}
-// 						className="tooltip-icon-button"
-// 					>
-// 						<Icon icon={code} />
-// 					</button>
-// 					<button
-// 						onPointerDown={(e) => this.onMarkClick(e, 'list')}
-// 						className="tooltip-icon-button"
-// 					>
-// 						<Icon icon={list} />
-// 					</button>
-// 					<button
-// 						onPointerDown={(e) => this.onMarkClick(e, 'underline')}
-// 						className="tooltip-icon-button"
-// 					>
-// 						<Icon icon={underline} />
-// 					</button>
-// 				</FormatToolbar>
-// 				<Editor
-// 					value={this.state.value}
-// 					ref={this.ref}
-// 					onChange={this.onChange}
-// 					onKeyDown={this.onKeyDown}
-// 					renderMark={this.renderMark}
-// 					toggleMark={this.booty}
-// 				/>
-// 			</Fragment>
-// 		);
-// 	}
-// }
-
-
-
 import { Editor } from 'slate-react'
 import { Value } from 'slate'
 import React from 'react'
-import initialValue from './sl/value'
+import initialValue from './static/value'
 import { isKeyHotkey } from 'is-hotkey'
-import { Button, Toolbar , Icon} from './sl/Headbar'
+import { Button, Toolbar , Icon} from './static/Headbar'
 
-// import Icon from '@material-ui/core/Icon'
 
 
 const DEFAULT_NODE = 'paragraph';
@@ -211,8 +38,8 @@ class TextEditor extends React.Component {
     return (
       <div>
         <Toolbar>
-          {this.renderMarkButton('bold', 'ic_format_bold')}
-          {this.renderMarkButton('italic', 'format-italic')}
+          {this.renderMarkButton('bold', 'format_bold')}
+          {this.renderMarkButton('italic', 'format_italic')}
           {this.renderMarkButton('underlined', 'format_underlined')}
           {this.renderMarkButton('code', 'code')}
           {this.renderBlockButton('heading-one', 'looks_one')}
@@ -251,7 +78,6 @@ class TextEditor extends React.Component {
 
   renderBlockButton = (type, icon) => {
     let isActive = this.hasBlock(type)
-	console.log(icon)
     if (['numbered-list', 'bulleted-list'].includes(type)) {
       const { value: { document, blocks } } = this.state
 
@@ -362,7 +188,6 @@ class TextEditor extends React.Component {
         editor.setBlocks(isActive ? DEFAULT_NODE : type)
       }
     } else {
-      // Handle the extra wrapping required for list buttons.
       const isList = this.hasBlock('list-item')
       const isType = value.blocks.some(block => {
         return !!document.getClosest(block.key, parent => parent.type === type)
