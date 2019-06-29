@@ -1,10 +1,13 @@
 Lightweight Text and Code Editor all in your browser!
 
+<img src='https://i.imgur.com/OsVAuN7.png'>
+
+<img src='https://i.imgur.com/DdJzXNA.png'>
 
 Steps to initalize
 ====
 
-1.) After unzipping the downloaded folder, open your terminal 
+1.) After unzipping the downloaded folder, open your terminal
 
 2.) To go to this folder, type cd and drag this folder into the terminal and press enter
 
@@ -14,7 +17,7 @@ Steps to initalize
 4.) Then run ' brew install yarn ' to build the static server for the app.
 
 5.) After installation, run  ' yarn build ' , followed by ' yarn global add serve ' (no quotations).
- 
+
 6.) The server is now ready to be launced whenever. To run this app, you will no longer need to perform steps 1-5. Run the following steps      to deploy app on a needed basis.
 
 
@@ -24,7 +27,7 @@ Steps to Run App
 
 8.) Run ' serve -s build '
 
-9.) A new tab will be opened with the app. 
+9.) A new tab will be opened with the app.
 
 
 Features
