@@ -4,14 +4,17 @@ import { TextEditor, CodeEdit } from "./components";
 import "./App.css";
 
 class App extends Component {
-	
-	
-	
-	
+
+	state = {
+		currentview:false
+	}
+
+
+
 	render() {
 		return (
 			<div className="App">
-				<div className="Apps">
+				<div className="Apps" style={{marginTop:'10%'}}>
 					<TextEditor />
 				</div>
 				<div className="code">
@@ -19,7 +22,7 @@ class App extends Component {
 						<CodeEdit />
 					</div>
 				</div>
-					
+
 			</div>
 		);
 	}
