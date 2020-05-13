@@ -1,7 +1,7 @@
 import { Editor } from "slate-react";
-import { Value } from "slate";
+// import { Value } from "slate";
 import React from "react";
-import initialValue from "./static/value";
+// import initialValue from "./static/value";
 import { isKeyHotkey } from "is-hotkey";
 import { Button, Toolbar, Icon } from "./static/Headbar";
 import Html from "slate-html-serializer";
@@ -12,15 +12,12 @@ const isBoldHotkey = isKeyHotkey("mod+b");
 const isItalicHotkey = isKeyHotkey("mod+i");
 const isUnderlinedHotkey = isKeyHotkey("mod+u");
 const isCodeHotkey = isKeyHotkey("mod+`");
+const html = new Html({ rules });
+const initVal = html.deserialize(localStorage.getItem("content") || "<p></p>");
 
 class TextEditor extends React.Component {
-  constructor() {
-    super();
-    this.html = new Html({ rules });
-  }
-
   state = {
-    value: Value.fromJSON(initialValue),
+    value: initVal,
   };
 
   hasMark = (type) => {
@@ -143,11 +140,8 @@ class TextEditor extends React.Component {
 
   onChange = ({ value }) => {
     if (value.document !== this.state.value.document) {
-      console.log("In chaging!");
-      localStorage.setItem("content", this.html.serialize(value));
+      localStorage.setItem("content", html.serialize(value));
     }
-    console.log("val setting");
-    console.log(this.state.value.document);
     this.setState({ value });
   };
 
