@@ -18,12 +18,11 @@ import Select from "@material-ui/core/Select";
 export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
-
     this.editorChange = this.editorChange.bind(this);
   }
   state = {
     codeMode: "python",
-    usrValue: "",
+    usrValue: localStorage.getItem("code_edit") || "",
   };
   handleLangChange = (e) => {
     this.setState({ codeMode: e.target.value });
@@ -31,6 +30,11 @@ export default class App extends React.Component {
   editorChange = (val) => {
     this.setState({ usrValue: val });
   };
+  // handleSave = (_) => {
+  // console.log(this.editorChange);
+  // localStorage.setItem("code_edit", this.editorChange);
+  // console.log("Saved data");
+  // };
 
   render() {
     return (
@@ -71,6 +75,7 @@ export default class App extends React.Component {
               <MenuItem value={"golang"}>Go</MenuItem>
             </Select>
           </FormControl>
+          <button onClick={this.handleSave}>Save</button>
         </div>
         <div style={{ margin: "auto" }}>
           <AceEditor
