@@ -13,7 +13,7 @@ const MARK_TAGS = {
   u: "underline",
 };
 
-export default rules = [
+const rules = [
   {
     deserialize(el, next) {
       const type = BLOCK_TAGS[el.tagName.toLowerCase()];
@@ -29,7 +29,7 @@ export default rules = [
       }
     },
     serialize(obj, children) {
-      if (obj.object == "block") {
+      if (obj.object === "block") {
         switch (obj.type) {
           case "code":
             return (
@@ -41,6 +41,8 @@ export default rules = [
             return <p className={obj.data.get("className")}>{children}</p>;
           case "quote":
             return <blockquote>{children}</blockquote>;
+          default:
+            return children;
         }
       }
     },
@@ -58,7 +60,7 @@ export default rules = [
       }
     },
     serialize(obj, children) {
-      if (obj.object == "mark") {
+      if (obj.object === "mark") {
         switch (obj.type) {
           case "bold":
             return <strong>{children}</strong>;
@@ -66,8 +68,12 @@ export default rules = [
             return <em>{children}</em>;
           case "underline":
             return <u>{children}</u>;
+          default:
+            return children;
         }
       }
     },
   },
 ];
+
+export default rules;

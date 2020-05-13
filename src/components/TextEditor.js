@@ -15,6 +15,7 @@ const isCodeHotkey = isKeyHotkey("mod+`");
 
 class TextEditor extends React.Component {
   constructor() {
+    super();
     this.html = new Html({ rules });
   }
 
@@ -141,9 +142,12 @@ class TextEditor extends React.Component {
   };
 
   onChange = ({ value }) => {
-    if (value.document != this.state.value.document) {
+    if (value.document !== this.state.value.document) {
+      console.log("In chaging!");
       localStorage.setItem("content", this.html.serialize(value));
     }
+    console.log("val setting");
+    console.log(this.state.value.document);
     this.setState({ value });
   };
 
